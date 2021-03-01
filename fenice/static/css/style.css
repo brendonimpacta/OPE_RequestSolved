@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, Tahoma;
+}
+
+html, body {
+  height: 100%;
+}
+
+/*GENERAL STYLES*/
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+button {
+  height: 35px;
+  padding: 5px 30px;
+  border-radius: 4px;
+  border: none;
+  background-color: gray;
+  margin-left: 10px;
+  cursor: pointer;
+}
+/*GENERAL STYLES*/
+
+/*HEADER*/
+header {
+  width: 100%;
+  padding: 5px;
+  height: auto;
+  text-align: center;
+  background-color: lightgray;
+}
+
+.logo {
+  display: inline-block;
+  height: 120px;
+  width: 240px;
+  margin-top: 10px;
+  background-color: gray;
+  border-radius: 5px;
+}
+
+nav.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px auto;
+  padding: 0 20px;
+  width: 90%;
+  height: 70px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  max-width: 1140px;
+}
+
+nav.menu ul {
+  display: inline-block;
+}
+
+nav.menu li {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+nav.menu li:last-child {
+  margin-right: 0;
+}
+
+nav.menu input {
+  margin-left: 20px;
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 20px;
+  transition: 1s;
+
+  position: relative;
+}
+
+/* nav.menu input:hover {
+  width: 170px;
+} */
+
+#lupa {
+  width: 28px;
+  top: 10px;
+  right: 59px;
+  transition: 1s;
+  
+  position: relative;
+}
+/*HEADER*/
+
+/*CAROUSEL*/
+
+div.carousel {
+  height: 330px;
+  width: 89.5%;
+  background-color: gray;
+  margin: 20px auto 4px auto;
+  border-radius: 4px;
+}
+
+div.products {
+  width: 27.8%;
+  height: 270px;
+  background-color: gray;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 20px;
+}
+/*CAROUSEL*/
+
+div.top-products {
+  text-align: center;
+}
+
+/*FOOTER*/
+
+footer {
+  background-color: lightgray;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 25px 30px;
+  border-top: 1px solid gray;
+  text-align: center;
+}
+
+div.footer-info:first-child {
+  border-right: 1px solid gray;
+}
+
+footer div.footer-info {
+  display: inline-block;
+  width: 48%;
+  padding: 10px 100px;
+  text-align: justify;
+  line-height: 30px;
+}
+
+/*FOOTER*/
