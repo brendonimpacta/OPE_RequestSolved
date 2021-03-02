@@ -74,10 +74,11 @@ nav.menu li:last-child {
 }
 
 nav.menu input {
+  outline: none;
   margin-left: 20px;
   height: 40px;
   width: 40px;
-  padding: 5px;
+  padding: 5px 5px 5px 37px;
   border-radius: 10px;
   border: none;
   margin-right: 20px;
@@ -102,14 +103,71 @@ nav.menu input {
 
 /*CAROUSEL*/
 
-div.carousel {
-  height: 330px;
-  width: 89.5%;
-  background-color: gray;
-  margin: 20px auto 4px auto;
-  border-radius: 4px;
+/*CAROUSEL*/
+
+.carousel {
+  margin: 20px auto 0 auto;
+  overflow: hidden;
+  max-width: 780px;
+  position: relative;
+  border-radius: 20px;
 }
 
+.carousel .carousel_item,
+.carousel .carousel_item--hidden {
+  display: none;
+}
+
+.carousel .carousel_item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel .carousel_item--visible {
+  display: block;
+  animation: fadeVisibility .5s;
+}
+
+.carousel .carousel_actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel .carousel_actions button {
+  color: white;
+  border-radius: 50px;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+  width: 110px;
+  height: 40px;
+}
+
+.carousel .carousel_actions button#carousel_button--prev {
+  margin-left: 20px;
+}
+
+.carousel .carousel_actions button#carousel_button--next {
+  margin-right: 20px;
+}
+
+@keyframes fadeVisibility{
+  0%{
+      opacity: 0;
+  }
+
+  100%{
+      opacity: 1;
+  }
+}
+/*CAROUSEL*/
+
+
+/*TOP PRODUCTS*/
 div.products {
   width: 27.8%;
   height: 270px;
@@ -118,11 +176,12 @@ div.products {
   display: inline-block;
   margin: 20px;
 }
-/*CAROUSEL*/
 
 div.top-products {
   text-align: center;
 }
+/*TOP PRODUCTS*/
+
 
 /*FOOTER*/
 

@@ -21,14 +21,31 @@
         </ul>
 
         <div>
-          <input id="menuInput" type="text"/>
+          <input dir="rtl" id="menuInput" type="text"/>
           <img id="lupa" src="static/images/lupa.png"/>
           <button>Entrar</button>
           <button>Carrinho</button>
         </div>
       </nav>
     </header>
-    <div class="carousel"></div>
+
+    <div class="carousel">
+      <div class="carousel_item carousel_item--visible">
+          <img src="static/images/1.jpg">
+      </div>
+      <div class="carousel_item">
+          <img src="static/images/2.jpg">
+      </div>
+      <div class="carousel_item">
+          <img src="static/images/3.jpg">
+      </div>
+
+      <div class="carousel_actions">
+          <button id="carousel_button--prev" aria-label="Previous slide">Anterior</button>
+          <button id="carousel_button--next" aria-label="Next Slide">Próximo</button>
+      </div>
+    </div>
+
     <div class="top-products">
           <div class="products"></div>
           <div class="products"></div>
