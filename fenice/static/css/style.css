@@ -41,6 +41,30 @@ input, textarea {
   outline: none
 }
 
+::-webkit-scrollbar {
+  width: 17px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 2px solid #fff;
+}
+
+
+
+textarea::-webkit-scrollbar {
+  width: 17px;
+  background-color: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #2b2b2b;
+  border-radius: 16px;
+  border: 1px solid #fff;
+}
+
 /*GENERAL STYLES*/
 
 
@@ -124,6 +148,7 @@ header input.search-img:hover {
 header input.search {
   border: none;
   border-bottom: 1px solid #9c9c9c;
+  border-left: 1px solid #9c9c9c;
   padding: 0 30px 8px 10px;
   width: 200px;
 
@@ -160,3 +185,63 @@ header div.topbar ul li{
   margin-right: 30px;
 }
 /*TOPBAR*/
+
+/*FOOTER*/
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-content: space-between;
+  width: 100%;
+  height: auto;
+  background-color: #2b2b2b;
+  padding: 15px 40px;
+  margin-top: 30px;
+  color: white;
+}
+
+footer div.footer-box > span {
+  display: block;
+}
+
+footer div.footer-box {
+  margin: 0 auto;
+  width: 23%;
+  height: auto;
+  text-transform: uppercase;
+}
+
+footer img {
+  width: 35px;
+}
+
+footer input, textarea {
+  border: none;
+  border-bottom: 1px solid #9c9c9c;
+  border-left:  1px solid #9c9c9c;
+  padding: 0 5px 8px 10px;
+  margin: 10px 0;
+  width: 200px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #a8a8a8;
+  background-color: transparent;
+}
+
+footer textarea {
+  width: 70%;
+  height: 100px;
+  display: block;
+  resize: none;
+}
+
+footer input {
+  width: 70%;
+}
+
+footer input::placeholder, textarea::placeholder {
+  text-transform: initial;
+}
+/*FOOTER*/
