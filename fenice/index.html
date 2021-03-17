@@ -3,63 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/carousel.css">
   <link rel="stylesheet" href="static/css/style.css">
-  <script src="static/script.js"></script>
-  <title>Document</title>
+
+  <title>Fenice Arte & Joia</title>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <img class="logo" src="">
-      <nav class="menu">
+  <header>
+    <div class="header-wrapper">
+      <img class="logo" src="static/images/fenicelogo.png"/>
+
+      <form class="search-field" method="GET">
+        <input class="search" name="search" type="text" placeholder="Pesquisar produtos"/>
+        <input type="submit" value="" id="search-submit" class="search-img"/>
+      </form>
+    
+      <div class="menu">
         <ul>
-          <li>Home</li>
-          <li>Produtos</li>
-          <li>Fale Conosco</li>
+          <li><a href="#">anéis</a></li> 
+          <li><a href="#">colares</a></li>
+          <li><a href="#">acessórios</a></li>
+          <li><a href="#">brincos</a></li>
         </ul>
-
-        <div>
-          <input dir="rtl" id="menuInput" type="text"/>
-          <img id="lupa" src="static/images/lupa.png"/>
-          <button>Entrar</button>
-          <button>Carrinho</button>
-        </div>
-      </nav>
-    </header>
-
-    <div class="carousel">
-      <div class="carousel_item carousel_item--visible">
-          <img src="static/images/1.jpg">
-      </div>
-      <div class="carousel_item">
-          <img src="static/images/2.jpg">
-      </div>
-      <div class="carousel_item">
-          <img src="static/images/3.jpg">
-      </div>
-
-      <div class="carousel_actions">
-          <button id="carousel_button--prev" aria-label="Previous slide">Anterior</button>
-          <button id="carousel_button--next" aria-label="Next Slide">Próximo</button>
       </div>
     </div>
+    <div class="topbar">
+      <ul>
+        <li><a href="#">fale conosco</a></li>
+        <li><a href="#">faça seu pedido</a></li>
+        <li><a href="#">ofertas</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <div class="top-products">
-          <div class="products"></div>
-          <div class="products"></div>
-          <div class="products"></div>
+  <div class="carousel">
+    <div class="carousel_item carousel_item--visible">
+        <img src="https://images-aka.jared.com/jared/collections_1/pretty___petite/20181200-JD-Pretty_petite-Herro-mobile.jpg">
+    </div>
+    <div class="carousel_item">
+        <img src="https://www.bellevuerarecoins.com/wp-content/uploads/Jewerly-Page-Main-Image-2.png">
+    </div>
+    <div class="carousel_item">
+        <img src="https://i.pinimg.com/originals/00/e0/e9/00e0e9cbbb22bdbeb8c2860680622f70.jpg">
+    </div>
+
+    <div class="carousel_actions">
+        <img src="static/images/arrow.png" id="carousel_button--prev"></img>
+        <img src="static/images/arrow.png" id="carousel_button--next"></img>
     </div>
   </div>
 
-  <footer>
-    <div class="footer-info">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur repudiandae vitae fugit! Quas, fuga sed corrupti porro necessitatibus molestias laboriosam commodi, minus totam ipsum pariatur adipisci, ex vitae iste explicabo.
-    </div>
-    <div class="footer-info">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur repudiandae vitae fugit! Quas, fuga sed corrupti porro necessitatibus molestias laboriosam commodi, minus totam ipsum pariatur adipisci, ex vitae iste explicabo.
-    </div>
-  </footer>
+
+  <script src="static/js/script.js"></script>
+  <script src="static/js/carousel.js"></script>
 </body>
 </html>
