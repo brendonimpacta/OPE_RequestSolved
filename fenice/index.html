@@ -59,23 +59,26 @@
     </div>
   </div>
 
-  <footer class="teste">
+  <footer>
     <div class="footer-box">
       <span>sobre nós</span>
-    </div>
-    <div class="footer-box">
-      <span>redes sociais</span>
-      <img src="static/images/fb-logo.png">
-      <img src="static/images/insta-logo.png">
-      <img src="static/images/zap-logo.png">
     </div>
     <div class="footer-box">
       <span>newsletter</span>
     </div>
     <div class="footer-box">
-      <span>contate-nos</span>
-      <input type="text" placeholder="Email">
-      <textarea name="" id="" placeholder="Escreva sua mensagem..."></textarea>
+      <span>redes sociais</span>
+      <a class="social-media" href="#"><img src="static/images/fb-logo.png"></a>
+      <a class="social-media" href="#"><img src="static/images/insta-logo.png"></a>
+      <a class="social-media" href="#"><img src="static/images/zap-logo.png"></a>
+    </div>
+    <div class="footer-box">
+      <form class="contact" action="" method="POST">
+        <span>contate-nos</span>
+        <input name="email" id="email" type="text" placeholder="Email">
+        <textarea name="message" id="message" placeholder="Escreva sua mensagem..."></textarea>
+        <button disabled class="form-button">enviar</button>
+      </form>
     </div>
   </footer>
 
