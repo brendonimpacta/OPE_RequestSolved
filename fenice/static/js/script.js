@@ -42,13 +42,5 @@ window.onload = function() {
     });
   });
 
-
-
-  a = document.getElementsByTagName('a');
-
-  a_array = [...a]
-  console.log(a_array)
-  
-  a_array.forEach((tag) => 
-    tag.classList.add('fromRight'))
+  [...document.getElementsByTagName('a')].forEach((a) => a.classList.add('fromRight'));
 };
