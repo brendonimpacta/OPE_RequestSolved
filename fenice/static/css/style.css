@@ -37,7 +37,8 @@ a::after {
   transition: transform .250s ease;
 }
 
-a:hover::after, a:focus::after {
+a:hover::after, 
+a:focus::after {
   transform: scaleX(1);
 }
 
@@ -58,7 +59,7 @@ button {
   border: none;
   outline: none;
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 /*SCROLLBAR*/
@@ -243,11 +244,11 @@ footer div.footer-box span::after {
   align-content: center;
 } */
 
-footer form.form-news p {
+footer p {
   color: #9c9c9c;
   text-transform: initial;
   font-style: italic;
-  margin: 10px;
+  margin: 20px 0;
 }
 
 footer a.social-media {
@@ -256,8 +257,15 @@ footer a.social-media {
 
 }
 
-footer a.social-media img {
+footer a.social-media img {  
   width: 35px;
+  transition: .3s ease;
+}
+
+footer a.social-media img:hover,
+footer a.social-media img:focus {
+  transform: translateY(-2px);
+  color: white;
 }
 
 footer input, 
@@ -290,7 +298,9 @@ footer textarea:focus {
 }
 
 footer input:hover::placeholder,
-footer textarea:hover::placeholder {
+footer input:focus::placeholder,
+footer textarea:hover::placeholder,
+footer textarea:focus::placeholder {
   color: white;
 }
 
@@ -310,5 +320,13 @@ footer button.form-button:focus {
   transform: translateY(-2px);
   background-color: #121212;
   color: white;
+}
+
+div.dev-bar {
+  width: 100%;
+  background-color: #1f1f1f;
+  color: #9c9c9c;
+  text-align: center;
+  padding: 5px 0;
 }
 /*FOOTER*/
