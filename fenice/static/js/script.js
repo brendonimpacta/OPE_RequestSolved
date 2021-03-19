@@ -9,14 +9,18 @@ window.onload = function() {
   const emailContact = document.getElementById('email-contact')
   const textAreaContact = document.getElementById('textarea-contact')
 
-  const dominio = [
-    "@hotmail.com", "@outlook.com", "@gmail.com", "@yahoo.com"
+  const dominios = [
+    "@hotmail.com", "@outlook.com", "@gmail.com", "@yahoo.com", "@aluno.faculdadeimpacta.com"
   ];
 
-  emailNews.addEventListener('keyup', function() {
-    const inputEmailValue = emailNews.value;
+  // if (newsButton.hasAttribute('disabled')) {
+  //   console.log("Not allowed!")
+  // };
 
-    if (inputEmailValue.includes("@hotmail.com")) {
+  emailNews.addEventListener('keyup', function() {
+    const inputEmailValue = emailNews.value.toLowerCase();
+
+    if (dominios.some(dominio => inputEmailValue.includes(dominio))) {
       newsButton.removeAttribute('disabled');
       newsButton.style.cursor = 'pointer';
       
@@ -28,10 +32,10 @@ window.onload = function() {
 
   [emailContact, textAreaContact].forEach((contactField) => {
     contactField.addEventListener('keyup', function() {
-      const inputContactValue = emailContact.value;
-      const textAreaContactValue = textAreaContact.value
+      const inputContactValue = emailContact.value.toLowerCase();
+      const textAreaContactValue = textAreaContact.value;
     
-      if (textAreaContactValue != "" && inputContactValue.includes("@hotmail.com")) {
+      if (textAreaContactValue != "" && dominios.some(dominio => inputContactValue.includes(dominio))) {
         contactButton.removeAttribute('disabled');
         contactButton.style.cursor = 'pointer';
         
@@ -41,6 +45,7 @@ window.onload = function() {
       };
     });
   });
+
 
   [...document.getElementsByTagName('a')].forEach((a) => a.classList.add('fromRight'));
 };

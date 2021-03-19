@@ -3,11 +3,23 @@
   margin: 0;
   padding: 0;
   font-family: 'Varela Round', sans-serif;
+  color: var(--main-color);
 }
 
 html, body {
   height: 100vh;
   background-color: #fafafa;
+}
+
+:root {
+  --header-color: #fafafa;
+  --topbar-color: #e8e8e8; 
+  --footer-color: #2b2b2b;
+  --button-color: #1f1f1f;
+  --button-hover-color: #121212;
+  --devbar-color: #131313;
+  --main-color: #a8a8a8;
+  --light-gray: #f5f5f5;
 }
 
 .preload * {
@@ -18,13 +30,14 @@ html, body {
 }
 
 .container {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
+  text-align: center;
 }
 
 a {
   text-decoration: none;
-  color: #a8a8a8;
+
 }
 
 a::after {
@@ -32,7 +45,7 @@ a::after {
   
   display: block;
   margin-top: 2px;
-  border-bottom: 1px solid #a8a8a8;
+  border-bottom: 1px solid var(--main-color);
   transform: scaleX(0);
   transition: transform .250s ease;
 }
@@ -69,9 +82,9 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #babac0;
+  background-color: var(--main-color);
   border-radius: 16px;
-  border: 2px solid #fff;
+  border: 2px solid white;
 }
 
 textarea::-webkit-scrollbar {
@@ -80,9 +93,9 @@ textarea::-webkit-scrollbar {
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background-color: #2b2b2b;
+  background-color: var(--footer-color);
   border-radius: 16px;
-  border: 1px solid #fff;
+  border: 1px solid var(--main-color);
 }
 /*SCROLLBAR*/
 
@@ -93,7 +106,7 @@ textarea::-webkit-scrollbar-thumb {
 header {
   width: 100%;
   height: auto;
-  background-color: white;
+  background-color: var(--header-color);
 }
 
 header div.header-wrapper {
@@ -138,7 +151,7 @@ header input.search-img {
   top: 7px;
   right: 30px;
 
-  background-image: url(../images/lupa.png);
+  background-image: url('../images/lupa.png');
   background-position: 100% 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -157,19 +170,18 @@ header input.search-img:focus {
 
 header input.search {
   border: none;
-  border-bottom: 1px solid #9c9c9c;
-  border-left: 1px solid #9c9c9c;
+  border-bottom: 1px solid var(--main-color);
+  border-left: 1px solid var(--main-color);
   padding: 0 30px 8px 10px;
   width: 200px;
-
+  background-color: transparent;
   font-size: 15px;
   text-transform: uppercase;
-  color: #a8a8a8;
 }
 
 header input.search::placeholder {
   font-size: 15px;
-  color: #a8a8a8;
+  color: var(--main-color);
   text-transform: initial;
 }
 
@@ -183,7 +195,7 @@ header div.topbar {
 
   width: 100%;
   height: 35px;
-  background-color: #e8e8e8;
+  background-color: var(--topbar-color);
   padding: 8px 0;
 }
 
@@ -209,10 +221,8 @@ footer {
   align-content: space-between;
   width: 100%;
   height: auto;
-  background-color: #2b2b2b;
+  background-color: var(--footer-color);
   padding: 15px 40px;
-  margin-top: 30px;
-  color: white;
 }
 
 footer div.footer-box {
@@ -225,6 +235,7 @@ footer div.footer-box {
 
 footer div.footer-box span {
   display: block;
+  color: white;
 }
 
 footer div.footer-box span::after {
@@ -234,7 +245,7 @@ footer div.footer-box span::after {
   width: 80px;
   height: 1px;
   margin: 3px auto 10px auto;
-  background-color: #a8a8a8;
+  background-color: var(--main-color);
 }
 
 /* footer form.form-news {
@@ -245,7 +256,7 @@ footer div.footer-box span::after {
 } */
 
 footer p {
-  color: #9c9c9c;
+  color: var(--main-color);
   text-transform: initial;
   font-style: italic;
   margin: 20px 0;
@@ -265,20 +276,18 @@ footer a.social-media img {
 footer a.social-media img:hover,
 footer a.social-media img:focus {
   transform: translateY(-2px);
-  color: white;
 }
 
 footer input, 
 footer textarea {
   border: none;
-  border-bottom: 1px solid #9c9c9c;
-  border-left:  1px solid #9c9c9c;
+  border-bottom: 1px solid var(--main-color);
+  border-left:  1px solid var(--main-color);
   padding: 0 5px 8px 10px;
   margin: 10px 0;
   width: 100%;
   font-size: 15px;
   text-transform: uppercase;
-  color: #a8a8a8;
   background-color: transparent;
   transition: .3s ease;
 }
@@ -305,12 +314,12 @@ footer textarea:focus::placeholder {
 }
 
 footer button.form-button {
-  background-color: #1f1f1f;
+  background-color: var(--button-color);
   width: 100%;
   padding: 10px;
-  color: #a8a8a8;
+  color: var(--main-color);
   border-radius: 3px;
-  border-bottom: 1px solid #9c9c9c;
+  border-bottom: 1px solid var(--main-color);
   transform: translateY(0px);
   transition: .3s ease;
 }
@@ -318,15 +327,136 @@ footer button.form-button {
 footer button.form-button:hover, 
 footer button.form-button:focus {
   transform: translateY(-2px);
+  background-color: var(--button-hover-color);
+  color: white;
+}
+/*FOOTER*/
+
+/*DEVBAR*/
+div.dev-bar {
+  width: 100%;
+  background-color: var(--devbar-color);
+  color: var(--main-color);
+  text-align: center;
+  padding: 1px 0 5px 0;
+}
+
+div.dev-bar p {
+  display: inline-block;
+  transition: .8s ease;
+}
+
+div.dev-bar p:hover {
+  color: #6adada;
+}
+
+div.dev-bar > img {
+  display: inline-block;
+  width: 22px;
+  
+  position: relative;
+  top: 3px;
+  left: 2px;
+}
+/*DEVBAR*/
+
+
+/*TRENDING PRODUCTS*/
+section.trending-products {
+  margin: 30px 0;
+}
+
+section.trending-products div.single-product {
+  display: inline-block;
+  width: 400px;
+  height: auto;
+  margin-right: 100px;
+  text-align: left;
+  transition: .3s transform ease;
+  cursor: pointer;
+}
+
+section.trending-products div.single-product:hover, 
+section.trending-products div.single-product:focus {
+  background-color: var(--light-gray);
+  transform: scale(1.03);
+}
+
+section.trending-products div.single-product:last-child {
+  margin-right: 0;
+}
+
+section.trending-products div.single-product > img {
+  width: 400px;
+  border-radius: 6px;
+}
+
+section.trending-products div.single-product > p {
+  font-size: 21px;
+}
+
+section.trending-products div.single-product span::after {
+  content: '';
+  
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--main-color);
+}
+/*TRENDING PRODUCTS*/
+
+
+
+/*               ########## FORM PARA TESTES DE "POST"
+.form-teste {
+  display: inline-block;
+  margin-top: 40px;
+  width: 50%;
+  border-radius: 3px;
+  height: auto;
+  padding: 10px;
+  background-color: #2b2b2b;
+}
+
+.form-teste input {
+  border: none;
+  border-bottom: 1px solid #9c9c9c;
+  border-left:  1px solid #9c9c9c;
+  padding: 0 5px 8px 10px;
+  margin: 10px 0;
+  width: 100%;
+  font-size: 15px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: .3s ease;
+}
+
+.form-teste input:hover, 
+.form-teste input:focus {
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.form-teste input:hover::placeholder,
+.form-teste input:focus::placeholder {
+  color: white;
+}
+
+.form-teste button {
+  background-color: #1f1f1f;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 1px solid #9c9c9c;
+  transform: translateY(0px);
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.form-teste button:hover, 
+.form-teste button:focus {
+  transform: translateY(-2px);
   background-color: #121212;
   color: white;
 }
 
-div.dev-bar {
-  width: 100%;
-  background-color: #1f1f1f;
-  color: #9c9c9c;
-  text-align: center;
-  padding: 5px 0;
-}
-/*FOOTER*/
