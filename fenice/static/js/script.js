@@ -1,6 +1,4 @@
 window.onload = function () {
-  import sendForm from "./backend";
-
   document.body.classList.remove("preload");
 
   const newsButton = document.getElementById("news-button");
@@ -16,19 +14,109 @@ window.onload = function () {
   const sendFormButton = document.getElementById("form-button");
   const user = document.getElementById("user");
   const password = document.getElementById("password");
-  const email = document.getElementById("email");
-  const confirmEmail = document.getElementById("confirmEmail");
-  const name = document.getElementById("name");
-  const phoneNum = document.getElementById("phoneNum");
-  const genre = document.getElementById("genre");
+  const clientEmail = document.getElementById("clientEmail");
+  const clientName = document.getElementById("clientName");
+  const phoneNumber = document.getElementById("phoneNumber");
+  const clientGenre = document.getElementById("clientGenre");
+  const cep = document.getElementById("cep");
   const address = document.getElementById("address");
   const addressNumber = document.getElementById("addressNumber");
-  const addresComplement = document.getElementById("addresComplement");
+  const addressComplement = document.getElementById("addressComplement");
   const state = document.getElementById("state");
   const city = document.getElementById("city");
-  const docType = document.getElementById("docType");
-  const cpf = document.getElementById("cpf");
-  const cnpj = document.getElementById("cnpj");
+  // const tipoDoc = document.getElementById("tipoDoc");
+  const docNumber = document.getElementById("docNumber");
+
+  ///////////////////////////////////////////////////////
+  function sendForm() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      login: {
+        usuario: user.value,
+        senha: password.value,
+      },
+      cliente: {
+        nome: clientName.value,
+        email: clientEmail.value,
+        sexo: clientGenre.value,
+        telefone: phoneNum.value,
+        endereco: {
+          CEP: cep.value,
+          logradouro: address.value,
+          numero: addressNumber.value,
+          complemento: addressComplement.value,
+          estado: state.value,
+          cidade: city.value,
+        },
+        documento: {
+          // tipoDocumento: tipoDoc.value,
+          numero: docNumber.value,
+        },
+      },
+    });
+    
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://18.225.31.219:1880/cliente", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  }
+  ///////////////////////////////////////////////////////
+  
+  // const singleProduct = [...document.getElementsByClassName("single-product")];
+  // const buttonProducts = [...document.getElementsByClassName("button-products")];
+
+  // singleProduct.forEach((product) => {
+  //   product.addEventListener("mouseenter", () => {
+  //     product.style.height = "auto";
+  //   })
+  // });
+
+  // singleProduct.forEach((product) => {
+  //   product.addEventListener("mouseout", () => {
+  //     product.style.height = "470px";
+  //   })
+  // });
+
+  const loginButton = document.getElementById("loginButton");
+  const signinButton = document.getElementById("signinButton");
+
+  const loginForm = document.getElementById("loginForm");
+  const signinForm = document.getElementById("signinForm");
+
+  const overlay = document.getElementById("overlay");
+  const closeButton1 = document.getElementById("closeButton1")
+  const closeButton2 = document.getElementById("closeButton2")
+
+  closeButton1.addEventListener("click", () => {
+    signinForm.style.display = "none";
+    overlay.style.display = "none"
+  });
+
+  closeButton2.addEventListener("click", () => {
+    loginForm.style.display = "none";
+    overlay.style.display = "none"
+
+  });
+
+  loginButton.addEventListener("click", () => {
+    loginForm.style.display = "block";
+    overlay.style.display = "block";
+  });
+
+  signinButton.addEventListener("click", () => {
+    signinForm.style.display = "block";
+    overlay.style.display = "block";
+  });
+
 
   const dominios = [
     "@hotmail.com",
@@ -68,20 +156,23 @@ window.onload = function () {
     });
   });
 
-  var isOpen = 0;
-  hamburguer.addEventListener("click", () => {
-    isOpen += 1;
+  if (window.innerWidth <= 570) {
+    var isOpen = 0;
+    hamburguer.addEventListener("click", () => {
+      isOpen += 1;
+  
+      if (isOpen == 1) {
+        menuMobile.style.top = "0px";
+        hamburguer.style.top = "180px";
+      } else {
+        menuMobile.style.top = "-170px";
+        hamburguer.style.top = "10px";
+  
+        isOpen = 0;
+      }
+    });
+  };
 
-    if (isOpen == 1) {
-      menuMobile.style.top = "0px";
-      hamburguer.style.top = "180px";
-    } else {
-      menuMobile.style.top = "-170px";
-      hamburguer.style.top = "10px";
-
-      isOpen = 0;
-    }
-  });
 
   [...document.getElementsByTagName("a")].forEach((a) =>
     a.classList.add("fromRight")
@@ -89,17 +180,5 @@ window.onload = function () {
 
   sendFormButton.addEventListener("click", () => {
     sendForm();
-
-    console.log("Evento capturado.");
-  });
-
-  docType.addEventListener("change", () => {
-    if (docType.value == "cpf") {
-      cpf.style.display = "inline-block";
-      cnpj.style.display = "none";
-    } else {
-      cnpj.style.display = "inline-block";
-      cpf.style.display = "none";
-    }
   });
 };
